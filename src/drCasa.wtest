@@ -1,0 +1,28 @@
+import personas.*
+
+describe "tests dr casa" {
+var logan = new Persona(celulas = 3000000)
+var frank = new Persona(celulas = 3500000)
+var lupus = new EnfermedadAutoinmune(celulasAmenazadas = 10000)
+var otitis = new EnfermedadInfecciosa(celulasAmenazadas = 100)
+var malaria = new EnfermedadInfecciosa(celulasAmenazadas = 500)
+var otraMalaria = new EnfermedadInfecciosa(celulasAmenazadas = 800)
+
+
+fixture{
+	logan.contraer(malaria)
+	logan.contraer(lupus)
+	logan.contraer(otitis)
+	frank.contraer(otraMalaria)
+}
+
+test "Logan, al pasar un dia, disminuye celulas" {
+	logan.pasarUnDia()
+	assert.equals(3000000-10000,logan.celulas())
+}
+test "Logan, al pasar un dia, sube levemente la temperatura" {
+	logan.pasarUnDia()
+	assert.equals(36+0.1+0.5,logan.temperatura())
+}
+
+}
