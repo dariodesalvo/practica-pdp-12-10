@@ -9,7 +9,7 @@ var malaria = new EnfermedadInfecciosa(celulasAmenazadas = 500)
 var otraMalaria = new EnfermedadInfecciosa(celulasAmenazadas = 800)
 
 
-fixture{
+method initialize(){
 	logan.contraer(malaria)
 	logan.contraer(lupus)
 	logan.contraer(otitis)
