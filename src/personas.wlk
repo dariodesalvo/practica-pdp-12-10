@@ -52,7 +52,7 @@ class EnfermedadInfecciosa {
 	}
 	
 	method esAgresiva(huesped){
-		celulasAmenazadas > (huesped.celulas()*0.1)
+		return celulasAmenazadas > (huesped.celulas()*0.1)
 	}
 }
 
